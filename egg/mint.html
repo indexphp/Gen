@@ -132,10 +132,10 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.balanceOf("0xe86899DF264bbD2D041B130FD7E2927F4861E0f2").call({ from: cuentaMaster })
+var event = contract.methods.devMint("100").call({ from: cuentaMaster })
                 .then(function (result) {
                     // will be fired once the receipt is mined
-                    var content = "<p><br>NFT total supply ";
+                    var content = "<p><br>Loading ";
 //content += JSON.stringify(result) + "<br>";
 content += result + "<br>";
 $("#lang").html(content);
