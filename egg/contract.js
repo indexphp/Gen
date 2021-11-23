@@ -250,6 +250,16 @@
 	 {
 	"inputs": [
 	    {
+		"internalType": "address",
+		"name": "receiver",
+		"type": "address"
+		},
+	    {
+		"internalType": "string",
+		"name": "tokenURI",
+		"type": "string"
+		},
+	    {
 		"internalType": "uint256",
 		"name": "quantity",
 		"type": "uint256"
@@ -264,19 +274,6 @@
 		}
 	    ],
 	"stateMutability": "nonpayable",
-	"type": "function"
-	},
-    {
-	"inputs": [],
-	"name": "name",
-	"outputs": [
-	    {
-		"internalType": "string",
-		"name": "",
-		"type": "string"
-		}
-	    ],
-	"stateMutability": "view",
 	"type": "function"
 	},
     {
