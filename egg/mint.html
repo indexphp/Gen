@@ -126,8 +126,7 @@ ethereum.request({ method: 'eth_requestAccounts' });
         $("#button3").click(function () {
             console.log("Master = " + cuentaMaster);
 
-            var ponyid = $("#ponyid").val();
-	    var hashid = $("#hashid").val();
+            
 
 //if not connected reload page
 if (!cuentaMaster) location.reload(true);
@@ -135,9 +134,6 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var ponyurl = "https://eggcoticon/" + ponyid;
-
-//alert (ponyurl);
 
 var event = contract.methods.devMint(100).send({ from: cuentaMaster, gasPrice: 5000000000 })
                 .then(function (receipt) {
