@@ -132,7 +132,7 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.devMint("100").call({ from: cuentaMaster })
+var event = contract.methods.devMint().call({ from: cuentaMaster })
                 .then(function (result) {
                     // will be fired once the receipt is mined
                     var content = "<p><br>Loading ";
