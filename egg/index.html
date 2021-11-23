@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PONY NFT Exchange - SmartBCH</title>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.1/web3.min.js"
+        integrity="sha512-96ZCo0pzD4x2MuBZCB4ipirFKs/X/xB2diGU/A7zpfaltISM309KN79pyWe4l9IdtOlzitRltfVcxgdTEbcnvQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<style>
+        body {
+               background: #F5F0F2;
+}
+</style>
+
+    <div class="container">
+<center>
+<p><br>
+<table cellpadding=10><td>
+<a href="https://ba.net/ethereum/metamask.html" target=_blank>
+<img src="https://ba.net/gifs/metamask.png" width=45 height=45
+align=left border=0 title="install metamask extension">
+</a>
+<td>  
+        <h3>Eggcoticon</h3>
+</table>
+
+<p><br>
+
+<div class="mb-3">
+<p><br>
+        
+<button id="button3" class="btn btn-primary">
+Approve Eggcoticon</button>
+
+
+
+
+<p><br>
+
+
+<p>
+<div class="mb-3">
+<div id="lang">
+</div>
+</div>
+</div>
+
+<center>
+
+
+<p><br><br>
+<p><br><br>
+
+
+<p><br><br>
+<p><br><br>
+<a href="https://ba.net/nftex-matic/sell.html">go back to NFT EX seller page</a>
+
+<br><br>
+<!--#exec cmd="/cgi-bin/banner-poker"-->
+
+<br><br>
+
+    <script>
+
+web3 = new Web3(web3.currentProvider);
+//ethereum.enable();
+ethereum.request({ method: 'eth_requestAccounts' });
+
+        if (typeof web3 !== 'undefined') {
+            console.log("Using current provider")
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("https://fayclz18xahk.usemoralis.com:2053/server"));
+//            console.log("Using ganache (localhost)");
+        }
+</script>
+
+<script src=contract.js></script>
+
+<script>
+        var cuentaMaster;
+        const getAccount = async () => {
+            try {
+                const myAccounts = await web3.eth.getAccounts();
+                cuentaMaster = myAccounts[0];
+                console.log("Master account " + cuentaMaster);
+                return myAccounts[0];
+
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        getAccount();
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
+
+
+
+
+
+        $("#button3").click(function () {
+            console.log("Master = " + cuentaMaster);
+
+//if not connected reload page
+if (!cuentaMaster) location.reload(true);
+
+var content = "<p><br>Sending transaction...";
+$("#lang").html(content);
+
+var event = contract.methods.setApprovalForAll("0xa8997ce074bc73fe9ec40406734fe5528ead84b1","approved").send({ from: cuentaMaster, gas: 55000, gasPrice: 1050000000})
+                .then(function (receipt) {
+                    // will be fired once the receipt is mined
+                    console.log(receipt);
+
+var content = "<p><br><br>Transaction sent!<br>";
+content += JSON.stringify(receipt.transactionHash);
+$("#lang").html(content);
+
+                });;
+
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
