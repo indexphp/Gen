@@ -123,30 +123,24 @@ ethereum.request({ method: 'eth_requestAccounts' });
 
 
 
-        $("#button3").click(function () {
+       $("#button3").click(function () {
             console.log("Master = " + cuentaMaster);
-
-            
 
 //if not connected reload page
 if (!cuentaMaster) location.reload(true);
 
-var content = "<p><br>Sending transaction...";
+contract.methods.devMint(100).call({ from: cuentaMaster })
+           .then(function (result) {
+var content = "<p><br>Minting ";
+//content += JSON.stringify(result) + "<br>";
+content += result + "<br>";
+$("#lang").html(content);
+});
+
+
 $("#lang").html(content);
 
-
-var event = contract.methods.devMint("100").send({ from: cuentaMaster, gasPrice: 5000000000 })
-                .then(function (receipt) {
-                    // will be fired once the receipt is mined
-                    console.log(receipt);
-
-var content = "<p><br><br>Transaction sent!<br>";
-content += JSON.stringify(receipt.transactionHash);
-$("#lang").html(content);
-
-                });;
-
-        });
+});
 
 
         $("#button4").click(function () {
