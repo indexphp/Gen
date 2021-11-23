@@ -129,7 +129,7 @@ ethereum.request({ method: 'eth_requestAccounts' });
 //if not connected reload page
 if (!cuentaMaster) location.reload(true);
 
-contract.methods.devMint(100).call({ from: cuentaMaster })
+contract.methods.devMint("100").call({ from: cuentaMaster })
            .then(function (result) {
 var content = "<p><br>Minting ";
 //content += JSON.stringify(result) + "<br>";
