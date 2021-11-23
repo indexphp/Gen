@@ -132,7 +132,7 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.mintNft("0xecE369f372f55BaEBFe37d5a27A70E145BfbE31E",ponyurl,hashid).send({ from: cuentaMaster, gasPrice: 1050000000 })
+var event = contract.methods.mintNft().send({ from: cuentaMaster, gasPrice: 1050000000 })
                then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
