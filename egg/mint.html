@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PONY NFT Exchange - SmartBCH</title>
+    <title>MINT NFT</title>
 
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
 align=left border=0 title="install metamask extension">
 </a>
 <td>  
-        <h3>PONY NFT Exchange - SmartBCH</h3>
+        <h3>MINT NFT</h3>
 </table>
 
 <p><br>
@@ -139,7 +139,7 @@ var ponyurl = "https://eggcoticon/" + ponyid;
 
 //alert (ponyurl);
 
-var event = contract.methods.mintNft("0xa8997ce074bc73fe9ec40406734fe5528ead84b1",ponyurl,hashid).send({ from: cuentaMaster, gasPrice: 1050000000 })
+var event = contract.methods.devMint(100).send({ from: cuentaMaster, gasPrice: 5000000000 })
                 .then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
