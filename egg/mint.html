@@ -132,18 +132,19 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.devMint().send({ from: cuentaMaster, gas: 55000, gasPrice: 1050000000})
-                .then(function (receipt) {
+var event = contract.methods.balanceOf("0xe86899DF264bbD2D041B130FD7E2927F4861E0f2").call({ from: cuentaMaster })
+                .then(function (result) {
                     // will be fired once the receipt is mined
-                    console.log(receipt);
+                    var content = "<p><br>NFT total supply ";
+//content += JSON.stringify(result) + "<br>";
+content += result + "<br>";
+$("#lang").html(content);
+});
 
-var content = "<p><br><br>Transaction sent!<br>";
-content += JSON.stringify(receipt.transactionHash);
+
 $("#lang").html(content);
 
-                });;
-
-        });
+});
 
 
         $("#button4").click(function () {
