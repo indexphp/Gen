@@ -247,6 +247,25 @@
 	"stateMutability": "nonpayable",
 	"type": "function"
 	},
+	 {
+	"inputs": [
+	    {
+		"internalType": "uint256",
+		"name": "quantity",
+		"type": "uint256"
+		}
+	    ],
+	"name": "devMint",
+	"outputs": [
+	    {
+		"internalType": "uint256",
+		"name": "",
+		"type": "uint256"
+		}
+	    ],
+	"stateMutability": "nonpayable",
+	"type": "function"
+	},
     {
 	"inputs": [],
 	"name": "name",
