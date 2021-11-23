@@ -135,7 +135,7 @@ var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
 
-var event = contract.methods.devMint(100).send({ from: cuentaMaster, gasPrice: 5000000000 })
+var event = contract.methods.devMint("100").send({ from: cuentaMaster, gasPrice: 5000000000 })
                 .then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
