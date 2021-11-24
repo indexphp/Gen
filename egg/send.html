@@ -125,7 +125,7 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.transferFrom("0xe86899df264bbd2d041b130fd7e2927f4861e0f2","0xb4c3c78b4059ebfd5c913b9819455389dfce40fd",nftnumber).send({ from: cuentaMaster, gasPrice: 33000000000 })
+var event = contract.methods.transferFrom("0xe86899df264bbd2d041b130fd7e2927f4861e0f2","0xb4c3c78b4059ebfd5c913b9819455389dfce40fd",nftnumber).send({ from: cuentaMaster, gasPrice: 35000000000 })
                then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
