@@ -125,7 +125,7 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.transferFrom(quantity).send({ from: cuentaMaster, gasPrice: 33000000000 })
+var event = contract.methods.mint(quantity).send({ from: cuentaMaster, gasPrice: 33000000000 })
                then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
