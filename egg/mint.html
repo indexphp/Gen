@@ -40,9 +40,8 @@ align=left border=0 title="install metamask extension">
 
 <div class="mb-3">
 <p><br>
-    <p>Mint 1 NFT = 20 Polygon, maximum 20 NFT each transaction.</p><br>
-    <label for="name" class="col-lg-2 form-label">NFT Quantity</label> 
-<input id="quantity" size="6" type="text" placeholder="1">
+    <p>Mint 20 NFT by admin.</p><br>
+   
 
 <p>
 <button id="button3" class="btn btn-primary">
@@ -125,7 +124,7 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.mint(quantity).send({ from: cuentaMaster, gasPrice: 35000000000 })
+var event = contract.methods.devMint(20).send({ from: cuentaMaster, gas: 2500000, gasPrice: 35000000000 })
                then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
