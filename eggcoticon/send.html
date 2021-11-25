@@ -43,6 +43,12 @@ align=left border=0 title="install metamask extension">
         
 <label for="name" class="col-lg-2 form-label">NFT Number</label>
 <input id="nftnumber" size="6" type="text" placeholder="1234">
+    
+ <label for="cars">Choose from walet:</label>
+<select id="wallet" name="walet">
+  <option value="0xe86899df264bbd2d041b130fd7e2927f4861e0f2">Eggcoticon</option>
+  <option value="0xb4c3c78b4059ebfd5c913b9819455389dfce40fd">Genesislab</option>
+</select>
 
 <p>
 <button id="button3" class="btn btn-primary">
@@ -118,6 +124,7 @@ ethereum.request({ method: 'eth_requestAccounts' });
       $("#button3").click(function () {
             console.log("Master = " + cuentaMaster);
             var nftnumber = $("#nftnumber").val();
+            var wallet = $("#wallet").val();
 
 //if not connected reload page
 if (!cuentaMaster) location.reload(true);
@@ -125,7 +132,7 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Sending transaction...";
 $("#lang").html(content);
 
-var event = contract.methods.transferFrom("0xe86899df264bbd2d041b130fd7e2927f4861e0f2","0x35284d759e79F941f069d6195e3202efD5d100AE",nftnumber).send({ from: cuentaMaster, gas: 120000, gasPrice: 30000000000 })
+var event = contract.methods.transferFrom(wallet,"0x35284d759e79F941f069d6195e3202efD5d100AE",nftnumber).send({ from: cuentaMaster, gas: 120000, gasPrice: 30000000000 })
                then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
