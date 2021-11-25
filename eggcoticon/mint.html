@@ -144,7 +144,7 @@ $("#lang").html(content);
 //if not connected reload page
 if (!cuentaMaster) location.reload(true);
 
-contract.methods.totalSupply().call({ from: cuentaMaster })
+contract.methods.open().call({ from: cuentaMaster })
            .then(function (result) {
 var content = "<p><br>NFT total supply ";
 //content += JSON.stringify(result) + "<br>";
