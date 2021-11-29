@@ -179,7 +179,7 @@ ethereum.request({ method: 'eth_requestAccounts' });
             web3 = new Web3(web3.currentProvider);
         } else {
             // set the provider you want from Web3.providers
-            web3 = new Web3(new Web3.providers.HttpProvider("https://smartbch.greyh.at"));
+            web3 = new Web3(new Web3.providers.HttpProvider("https://fayclz18xahk.usemoralis.com:2053/server"));
 //            console.log("Using ganache (localhost)");
         }
 </script>
@@ -215,7 +215,7 @@ ethereum.request({ method: 'eth_requestAccounts' });
             web3 = new Web3(web3.currentProvider);
         } else {
             // set the provider you want from Web3.providers
-            web3 = new Web3(new Web3.providers.HttpProvider("https://smartbch.greyh.at"));
+            web3 = new Web3(new Web3.providers.HttpProvider("https://fayclz18xahk.usemoralis.com:2053/server"));
 //            console.log("Using ganache (localhost)");
         }
 
@@ -247,7 +247,7 @@ balance = result;
 //content += "<br><table>";
 for(var x = 0; x < balance; x++){
 
-contract.methods.tokenOfOwnerByIndex(cuentaMaster, x).call({ from: cuentaMaster, gasPrice: 1050000000 })
+contract.methods.tokenOfOwnerByIndex(cuentaMaster, x).call({ from: cuentaMaster, gasPrice: 600000000 })
                 .then(function (result) {
 
 contract.methods.tokenURI(Number(result)).call()
