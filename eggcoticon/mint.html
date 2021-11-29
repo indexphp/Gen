@@ -30,7 +30,7 @@
 <table cellpadding=10><td>
 
 <img src="logo.png" width=45 height=45
-align=left border=0 title="install metamask extension">
+align=left border=0 >
 </a>
 <td>  
         <h3>Mint Eggcoticon NFT</h3>
@@ -70,10 +70,12 @@ Total supply</button>
 <p>Only 15,000 Eggcoticons in total will be minted.<br/>
 Each Eggcoticon is unique with low mint price. <br/>
 You can trade Eggcoticons on <a href="https://opensea.io/collection/eggcoticon" target="_blank"><b>Opensea</b></a>.</p>
-    <br/><br/><br/> <br/><br/><br/>
+    <br/><br/><br/>
+    <img src="mint.jpg" width=50% height=50%
+align=center border=0 >
+     <br/><br/><br/>
     
-    
-    <p>Eggcoticon NFT by GenesisLabs</p><br/>
+    <p><a href="/eggcoticon"> target="_blank">Eggcoticon NFT</a> 2021 by <a href="/" target="_blank">GenesisLab</a></p><br/>
 
 
 
@@ -135,7 +137,7 @@ if (!cuentaMaster) location.reload(true);
 var content = "<p><br>Loading...";
 $("#lang").html(content);
 
-var event = contract.methods.mint(1).send({ from: cuentaMaster, value: pricebuy2, gas: 25000, gasPrice: 60000000000 })
+var event = contract.methods.mint(1).send({ from: cuentaMaster, value: pricebuy2, gas: 250000, gasPrice: 100000000000 })
                then(function (receipt) {
                     // will be fired once the receipt is mined
                     console.log(receipt);
