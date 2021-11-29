@@ -260,7 +260,7 @@ contract.methods.tokenURI(Number(result)).call()
 $.getJSON(result1, function (data) {
 //content += "<td>"+content.length;
 content += "<!br>Pony ID "+result +" ";
-content += "<!td><img src="+data.image+" width=170 height=170>";
+content += "<!td><img src="+data.image.replace(ipfs://, 'https://ipfs.io/ipfs/')+" width=150 height=150>";
 $("#lang").html(content);
 });
 
